@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Enemies/Minotaur/MinotaurBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Control.gd" type="Script" id=2]
+[ext_resource path="res://src/Player/PCBox.tscn" type="PackedScene" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinotaurBox" parent="." instance=ExtResource( 1 )]
+margin_left = 896.0
+margin_right = 1024.0
+margin_bottom = 121.0
+
+[node name="Attack" type="Button" parent="."]
+margin_left = 328.0
+margin_top = 336.0
+margin_right = 704.0
+margin_bottom = 356.0
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PCBox" parent="." instance=ExtResource( 3 )]
+
+[connection signal="no_health" from="MinotaurBox/Minotaur" to="." method="_on_Minotaur_no_health"]
+[connection signal="button_up" from="Attack" to="." method="_on_Attack_button_up"]
+
+[editable path="MinotaurBox"]
+[editable path="MinotaurBox/Minotaur"]
+[editable path="PCBox"]

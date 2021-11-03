@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Enemies/Minotaur/MinotaurBox.gd" type="Script" id=1]
+[ext_resource path="res://src/Enemies/Minotaur/Minotaur.tscn" type="PackedScene" id=2]
+
+[node name="MinotaurBox" type="VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 103.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_right = 128.0
+margin_bottom = 14.0
+
+[node name="HP" type="Label" parent="."]
+margin_top = 18.0
+margin_right = 128.0
+margin_bottom = 32.0
+text = "Health "
+
+[node name="Mana" type="Label" parent="."]
+margin_top = 36.0
+margin_right = 128.0
+margin_bottom = 50.0
+text = "Mana"
+
+[node name="Str" type="Label" parent="."]
+margin_top = 54.0
+margin_right = 128.0
+margin_bottom = 85.0
+text = "
+Str"
+
+[node name="Int" type="Label" parent="."]
+margin_top = 89.0
+margin_right = 128.0
+margin_bottom = 103.0
+text = "Int"
+
+[node name="Spd" type="Label" parent="."]
+margin_top = 107.0
+margin_right = 128.0
+margin_bottom = 121.0
+text = "Spd"
+
+[node name="Minotaur" parent="." instance=ExtResource( 2 )]
+Name = "Minotaur"
+max_health = 15
+max_mana = 1
+strength = 3
+speed = 2
+
+[editable path="Minotaur"]

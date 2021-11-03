@@ -1,0 +1,530 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Player/PCBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Button/ChoiceButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/EXPL&FIGHT/ExploreScene.gd" type="Script" id=3]
+[ext_resource path="res://src/EXPL&FIGHT/Rooms.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Enemies/Minotaur/MinotaurBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/MapSquare.png" type="Texture" id=6]
+
+[node name="ExploreScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PCBox" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.125
+anchor_bottom = 0.533
+margin_right = 0.0
+margin_bottom = 0.199982
+
+[node name="TextBackGround" type="ColorRect" parent="."]
+margin_left = 192.0
+margin_right = 832.0
+margin_bottom = 448.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="RichTextLabel" parent="."]
+anchor_left = 0.187
+anchor_right = 0.812
+anchor_bottom = 0.747
+margin_left = 0.511993
+margin_right = 0.511963
+margin_bottom = -0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChoiceButtons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -176.0
+margin_top = -88.0
+margin_right = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cb1" parent="ChoiceButtons" instance=ExtResource( 2 )]
+visible = false
+margin_right = 64.0
+
+[node name="North" parent="ChoiceButtons" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_right = 136.0
+text = "North"
+
+[node name="cb3" parent="ChoiceButtons" instance=ExtResource( 2 )]
+visible = false
+margin_left = 144.0
+margin_right = 208.0
+
+[node name="cb4" parent="ChoiceButtons" instance=ExtResource( 2 )]
+visible = false
+margin_left = 216.0
+margin_right = 280.0
+
+[node name="cb5" parent="ChoiceButtons" instance=ExtResource( 2 )]
+visible = false
+margin_left = 288.0
+margin_right = 352.0
+
+[node name="West" parent="ChoiceButtons" instance=ExtResource( 2 )]
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 52.0
+text = "West"
+
+[node name="South" parent="ChoiceButtons" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_top = 32.0
+margin_right = 136.0
+margin_bottom = 52.0
+text = "South"
+
+[node name="East" parent="ChoiceButtons" instance=ExtResource( 2 )]
+margin_left = 144.0
+margin_top = 32.0
+margin_right = 208.0
+margin_bottom = 52.0
+text = "East"
+
+[node name="cb9" parent="ChoiceButtons" instance=ExtResource( 2 )]
+visible = false
+margin_left = 216.0
+margin_top = 32.0
+margin_right = 280.0
+margin_bottom = 52.0
+
+[node name="Rest" parent="ChoiceButtons" instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 32.0
+margin_right = 352.0
+margin_bottom = 52.0
+text = "Rest"
+
+[node name="BattleButtons" type="Control" parent="."]
+visible = false
+margin_left = 336.0
+margin_top = 512.0
+margin_right = 688.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="Button" parent="BattleButtons"]
+margin_right = 64.0
+margin_bottom = 20.0
+text = "Attack"
+
+[node name="Defend" type="Button" parent="BattleButtons"]
+margin_left = 72.0
+margin_right = 136.0
+margin_bottom = 20.0
+text = "Defend"
+
+[node name="b3" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 144.0
+margin_right = 208.0
+margin_bottom = 20.0
+
+[node name="b4" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 216.0
+margin_right = 280.0
+margin_bottom = 20.0
+
+[node name="b5" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 288.0
+margin_right = 352.0
+margin_bottom = 20.0
+
+[node name="b6" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 288.0
+margin_top = 32.0
+margin_right = 352.0
+margin_bottom = 52.0
+
+[node name="b7" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 216.0
+margin_top = 32.0
+margin_right = 280.0
+margin_bottom = 52.0
+
+[node name="b8" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 144.0
+margin_top = 32.0
+margin_right = 208.0
+margin_bottom = 52.0
+
+[node name="b9" type="Button" parent="BattleButtons"]
+visible = false
+margin_left = 72.0
+margin_top = 32.0
+margin_right = 136.0
+margin_bottom = 52.0
+
+[node name="Fireball" type="Button" parent="BattleButtons"]
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 52.0
+text = "Fireball"
+
+[node name="Maps" type="Node" parent="."]
+
+[node name="1" parent="Maps" instance=ExtResource( 4 )]
+north = true
+RoomNorth = "2"
+
+[node name="2" parent="Maps" instance=ExtResource( 4 )]
+north = true
+south = true
+west = true
+east = true
+RoomNorth = "9"
+RoomSouth = "1"
+RoomWest = "3"
+RoomEast = "4"
+
+[node name="3" parent="Maps" instance=ExtResource( 4 )]
+east = true
+RoomEast = "2"
+bed = true
+
+[node name="4" parent="Maps" instance=ExtResource( 4 )]
+north = true
+west = true
+RoomNorth = "5"
+RoomWest = "2"
+
+[node name="5" parent="Maps" instance=ExtResource( 4 )]
+north = true
+south = true
+east = true
+RoomNorth = "7"
+RoomSouth = "4"
+RoomEast = "6"
+
+[node name="6" parent="Maps" instance=ExtResource( 4 )]
+west = true
+RoomWest = "5"
+bed = true
+Enemy = true
+EnemyType = "Minotaur"
+
+[node name="7" parent="Maps" instance=ExtResource( 4 )]
+south = true
+west = true
+RoomSouth = "5"
+RoomWest = "8"
+
+[node name="8" parent="Maps" instance=ExtResource( 4 )]
+west = true
+east = true
+RoomWest = "10"
+RoomEast = "7"
+
+[node name="9" parent="Maps" instance=ExtResource( 4 )]
+north = true
+south = true
+RoomNorth = "10"
+RoomSouth = "2"
+
+[node name="10" parent="Maps" instance=ExtResource( 4 )]
+south = true
+west = true
+east = true
+RoomSouth = "9"
+RoomWest = "11"
+RoomEast = "8"
+
+[node name="11" parent="Maps" instance=ExtResource( 4 )]
+north = true
+west = true
+east = true
+RoomNorth = "13"
+RoomWest = "12"
+RoomEast = "10"
+
+[node name="12" parent="Maps" instance=ExtResource( 4 )]
+east = true
+RoomEast = "11"
+bed = true
+
+[node name="13" parent="Maps" instance=ExtResource( 4 )]
+north = true
+south = true
+RoomNorth = "14"
+RoomSouth = "11"
+Enemy = true
+
+[node name="14" parent="Maps" instance=ExtResource( 4 )]
+south = true
+RoomSouth = "13"
+Win = true
+
+[node name="Current Room" type="Label" parent="."]
+margin_top = 464.0
+margin_right = 128.0
+margin_bottom = 478.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="MinotaurBox" parent="Enemies" instance=ExtResource( 5 )]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -128.0
+margin_right = 0.0
+margin_bottom = 121.0
+
+[node name="MiniMap" type="Control" parent="."]
+margin_left = 1.0
+margin_top = 486.0
+margin_right = 142.0
+margin_bottom = 570.0
+rect_scale = Vector2( 1.3, 1.3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare" type="Sprite" parent="MiniMap"]
+position = Vector2( 56, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="1" type="Label" parent="MiniMap/MapSquare"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare2" type="Sprite" parent="MiniMap"]
+position = Vector2( 56, 64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="2" type="Label" parent="MiniMap/MapSquare2"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare3" type="Sprite" parent="MiniMap"]
+position = Vector2( 32, 64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="3" type="Label" parent="MiniMap/MapSquare3"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare4" type="Sprite" parent="MiniMap"]
+position = Vector2( 80, 64 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="4" type="Label" parent="MiniMap/MapSquare4"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare5" type="Sprite" parent="MiniMap"]
+position = Vector2( 104, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="5" type="Label" parent="MiniMap/MapSquare5"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare6" type="Sprite" parent="MiniMap"]
+position = Vector2( 128, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="6" type="Label" parent="MiniMap/MapSquare6"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare7" type="Sprite" parent="MiniMap"]
+position = Vector2( 104, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="7" type="Label" parent="MiniMap/MapSquare7"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare8" type="Sprite" parent="MiniMap"]
+position = Vector2( 80, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="8" type="Label" parent="MiniMap/MapSquare8"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare9" type="Sprite" parent="MiniMap"]
+position = Vector2( 56, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="9" type="Label" parent="MiniMap/MapSquare9"]
+margin_left = -4.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 8.0
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare10" type="Sprite" parent="MiniMap"]
+position = Vector2( 56, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="10" type="Label" parent="MiniMap/MapSquare10"]
+margin_left = -8.0
+margin_top = -6.0
+margin_right = 8.0
+margin_bottom = 8.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare11" type="Sprite" parent="MiniMap"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="11" type="Label" parent="MiniMap/MapSquare11"]
+margin_left = -8.0
+margin_top = -6.0
+margin_right = 8.0
+margin_bottom = 8.0
+text = "11"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare12" type="Sprite" parent="MiniMap"]
+position = Vector2( 8, 32 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="12" type="Label" parent="MiniMap/MapSquare12"]
+margin_left = -8.0
+margin_top = -6.0
+margin_right = 8.0
+margin_bottom = 8.0
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare13" type="Sprite" parent="MiniMap"]
+position = Vector2( 32, 16 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="13" type="Label" parent="MiniMap/MapSquare13"]
+margin_left = -8.0
+margin_top = -6.0
+margin_right = 8.0
+margin_bottom = 8.0
+text = "13"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSquare14" type="Sprite" parent="MiniMap"]
+position = Vector2( 32, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="14" type="Label" parent="MiniMap/MapSquare14"]
+margin_left = -8.0
+margin_top = -6.0
+margin_right = 8.0
+margin_bottom = 8.0
+text = "14"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="ChoiceButtons/North" to="." method="_on_North_button_up"]
+[connection signal="button_up" from="ChoiceButtons/West" to="." method="_on_West_button_up"]
+[connection signal="button_up" from="ChoiceButtons/South" to="." method="_on_South_button_up"]
+[connection signal="button_up" from="ChoiceButtons/East" to="." method="_on_East_button_up"]
+[connection signal="button_up" from="ChoiceButtons/Rest" to="." method="_on_Rest_button_up"]
+[connection signal="button_up" from="BattleButtons/Attack" to="." method="_on_Attack_button_up"]
+[connection signal="button_up" from="BattleButtons/Defend" to="." method="_on_Defend_button_up"]
+[connection signal="button_up" from="BattleButtons/Fireball" to="." method="_on_Fireball_button_up"]
+[connection signal="dead" from="Enemies/MinotaurBox" to="." method="_on_MinotaurBox_dead"]
+
+[editable path="Maps/1"]
+[editable path="Enemies/MinotaurBox"]
+[editable path="Enemies/MinotaurBox/Minotaur"]

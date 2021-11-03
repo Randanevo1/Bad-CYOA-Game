@@ -1,0 +1,183 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Button/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/EXPL&FIGHT/StatSelectionScene.gd" type="Script" id=2]
+
+[node name="StatSelectionScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -57.0
+margin_right = 57.0
+margin_bottom = 14.0
+text = "Choose your stats"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatSelection" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -236.0
+margin_right = 320.0
+margin_bottom = 212.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatSelection"]
+margin_right = 640.0
+margin_bottom = 14.0
+
+[node name="StatPoints" type="Label" parent="StatSelection/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 14.0
+text = "Stat points left:"
+
+[node name="StatPointNum" type="Label" parent="StatSelection/HBoxContainer"]
+margin_left = 101.0
+margin_right = 101.0
+margin_bottom = 14.0
+
+[node name="Health" type="HBoxContainer" parent="StatSelection"]
+margin_top = 18.0
+margin_right = 640.0
+margin_bottom = 38.0
+
+[node name="HealthDisplay" type="Label" parent="StatSelection/Health"]
+margin_top = 3.0
+margin_right = 46.0
+margin_bottom = 17.0
+text = "Health:"
+
+[node name="HPNum" type="Label" parent="StatSelection/Health"]
+margin_left = 50.0
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 17.0
+
+[node name="HNeg1" type="Button" parent="StatSelection/Health"]
+margin_left = 54.0
+margin_right = 79.0
+margin_bottom = 20.0
+text = "-1"
+
+[node name="HPos1" type="Button" parent="StatSelection/Health"]
+margin_left = 83.0
+margin_right = 111.0
+margin_bottom = 20.0
+text = "+1"
+
+[node name="Mana" type="HBoxContainer" parent="StatSelection"]
+margin_top = 42.0
+margin_right = 640.0
+margin_bottom = 62.0
+
+[node name="ManaDisplay" type="Label" parent="StatSelection/Mana"]
+margin_top = 3.0
+margin_right = 38.0
+margin_bottom = 17.0
+text = "Mana:"
+
+[node name="MPNum" type="Label" parent="StatSelection/Mana"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 42.0
+margin_bottom = 17.0
+
+[node name="MNeg1" type="Button" parent="StatSelection/Mana"]
+margin_left = 46.0
+margin_right = 71.0
+margin_bottom = 20.0
+text = "-1"
+
+[node name="MPos1" type="Button" parent="StatSelection/Mana"]
+margin_left = 75.0
+margin_right = 103.0
+margin_bottom = 20.0
+text = "+1"
+
+[node name="Strength" type="HBoxContainer" parent="StatSelection"]
+margin_top = 66.0
+margin_right = 640.0
+margin_bottom = 86.0
+
+[node name="StrengthDisplay" type="Label" parent="StatSelection/Strength"]
+margin_top = 3.0
+margin_right = 57.0
+margin_bottom = 17.0
+text = "Strength:"
+
+[node name="STRNum" type="Label" parent="StatSelection/Strength"]
+margin_left = 61.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = 17.0
+
+[node name="SNeg1" type="Button" parent="StatSelection/Strength"]
+margin_left = 65.0
+margin_right = 90.0
+margin_bottom = 20.0
+text = "-1"
+
+[node name="SPos1" type="Button" parent="StatSelection/Strength"]
+margin_left = 94.0
+margin_right = 122.0
+margin_bottom = 20.0
+text = "+1"
+
+[node name="Intelligence" type="HBoxContainer" parent="StatSelection"]
+margin_top = 90.0
+margin_right = 640.0
+margin_bottom = 110.0
+
+[node name="IntelligenceDisplay" type="Label" parent="StatSelection/Intelligence"]
+margin_top = 3.0
+margin_right = 80.0
+margin_bottom = 17.0
+text = "Intelligence:"
+
+[node name="INTNum" type="Label" parent="StatSelection/Intelligence"]
+margin_left = 84.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 17.0
+
+[node name="INeg1" type="Button" parent="StatSelection/Intelligence"]
+margin_left = 88.0
+margin_right = 113.0
+margin_bottom = 20.0
+text = "-1"
+
+[node name="IPos1" type="Button" parent="StatSelection/Intelligence"]
+margin_left = 117.0
+margin_right = 145.0
+margin_bottom = 20.0
+text = "+1"
+
+[node name="MenuButton" parent="." instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 285.0
+text = "Continue"
+scene_to_load = "res://src/EXPL&FIGHT/ExploreScene.tscn"
+
+[connection signal="button_up" from="StatSelection/Health/HNeg1" to="." method="_on_HNeg1_button_up"]
+[connection signal="button_up" from="StatSelection/Health/HPos1" to="." method="_on_HPos1_button_up"]
+[connection signal="button_up" from="StatSelection/Mana/MNeg1" to="." method="_on_MNeg1_button_up"]
+[connection signal="button_up" from="StatSelection/Mana/MPos1" to="." method="_on_MPos1_button_up"]
+[connection signal="button_up" from="StatSelection/Strength/SNeg1" to="." method="_on_SNeg1_button_up"]
+[connection signal="button_up" from="StatSelection/Strength/SPos1" to="." method="_on_SPos1_button_up"]
+[connection signal="button_up" from="StatSelection/Intelligence/INeg1" to="." method="_on_INeg1_button_up"]
+[connection signal="button_up" from="StatSelection/Intelligence/IPos1" to="." method="_on_IPos1_button_up"]
